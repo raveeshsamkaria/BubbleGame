@@ -1,3 +1,4 @@
+// Run Timer
 var timer = 60;
 function runTimer() {
     var timerInt = setInterval(function() {
@@ -12,6 +13,7 @@ function runTimer() {
 }
 runTimer();
 
+// Create Bubbles
 function makeBubble() {
     var clutter = "";    
     for (var i = 1; i <=168; i++) {
@@ -22,6 +24,7 @@ function makeBubble() {
 }
 makeBubble();
 
+// Generate New Random Number to Hit
 var hitNum = 0;
 function getNewHit() {
     hitNum = Math.floor(Math.random() * 10);
@@ -29,12 +32,14 @@ function getNewHit() {
 }
 getNewHit();
 
+// Calculate Score
 var score = 0;
 function increaseScore() {
     score += 10;
     document.querySelector("#scoreVal").textContent = score;
 }
 
+// Check Right Bubble is Clicked and Calculate Score
 document.querySelector("#pbtm").addEventListener("click", function(details) {
     var clickedNum = Number(details.target.textContent);
     if (clickedNum === hitNum) {
